@@ -1,0 +1,23 @@
+.SearchEngine {
+  text-align: left;
+}
+button,
+input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-inline-end: 30px;
+  font-size: 16px;
+  border: solid blue 3px;
+}
+button:hover {
+  cursor: pointer;
+}
+li {
+  color: #000;
+}
+li.description {
+  text-transform: capitalize;
+}
+img {
+  vertical-align: middle;
+}
