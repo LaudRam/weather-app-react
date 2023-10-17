@@ -1,5 +1,5 @@
 .SearchEngine {
-  text-align: left;
+  text-align: center;
 }
 button,
 input {
@@ -20,4 +20,5 @@ li.description {
 }
 img {
   vertical-align: middle;
+  width: 150px;
 }
