@@ -24,3 +24,9 @@ h2 {
   font-weight: 400;
   font-size: 25px;
 }
+.conditions-card {
+  text-align: right;
+}
+strong {
+  font-size: 40px;
+}
