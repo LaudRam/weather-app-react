@@ -52,10 +52,24 @@ strong {
   font-size: 80px;
   opacity: .7;
   margin: 0;
-  /* line-height: 0; */
 }
 p {
   text-transform: capitalize;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  color: #000;
+}
+li.description {
+  text-transform: capitalize;
+}
+img {
+  vertical-align: middle;
+  width: 150px;
 }
 
 /* Search Engine Styling */
@@ -76,20 +90,9 @@ button,
 input {
   padding: 10px 15px;
   border-radius: 10px;
-  /* margin-inline-end: 30px; */
   font-size: 18px;
   border: solid blue 3px;
 }
 button:hover {
   cursor: pointer;
-}
-li {
-  color: #000;
-}
-li.description {
-  text-transform: capitalize;
-}
-img {
-  vertical-align: middle;
-  width: 150px;
 }
