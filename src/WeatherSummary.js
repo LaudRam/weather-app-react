@@ -64,12 +64,15 @@ export default function WeatherSummary(props) {
         </div>
         <div className="row conditions-icons-card">
           {/* <div className="col-sm icon-temp-card"> */}
-            <div className="col-sm icon-card">
-              <img src={weather.icon} alt={weather.description} />
-            </div>
-            <div className="col-sm temp-card">
-              <strong>{Math.round(weather.currentTemperature)} <span className="temp-unit">°C</span></strong>
-              {/* <p className="description">{weather.description}</p> */}
+          <div className="col-sm icon-card">
+            <img src={weather.icon} alt={weather.description} />
+          </div>
+          <div className="col-sm temp-card">
+            <strong>
+              {Math.round(weather.currentTemperature)}{" "}
+              <span className="temp-unit">°C</span>
+            </strong>
+            {/* <p className="description">{weather.description}</p> */}
             {/* </div> */}
           </div>
           <div className="col-sm conditions-card">
@@ -87,15 +90,17 @@ export default function WeatherSummary(props) {
   } else {
     search();
     return (
-      <Bars
-        height="80"
-        width="80"
-        color="#4fa94d"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
+      <div className="loader">
+        <Bars
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
     );
     // return searchForm;
     // return handleSubmit;
