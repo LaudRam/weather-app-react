@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSummary.css";
-import "./SearchEngine.css";
-// import FormattedDate from "./FormattedDate";
-// import SearchEngine from "./SearchEngine";
+import Forecast from "./Forecast";
 import CurrentWeather from "./CurrentWeather";
 import { Bars } from "react-loader-spinner";
 
@@ -38,7 +36,7 @@ export default function WeatherSummary(props) {
   }
 
   let searchForm = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="SearchEngine">
       <input
         type="search"
         autoFocus="on"
@@ -55,21 +53,26 @@ export default function WeatherSummary(props) {
 
   if (loading) {
     return (
-      <div className="SearchEngine">
+      <div className="weather-summary">
         {searchForm}
-        <div className="weather-summary">
-          <div className="col-5 city-card">
-            {/* <h1>{weather.city}</h1> */}
-            <CurrentWeather data={weather} />
-            {/* <h2>
+        <div className="city-card mt-4">
+          {/* <h1>{weather.city}</h1> */}
+          <CurrentWeather data={weather} />
+          {/* <h2>
               <FormattedDate date={weather.date}/>
             </h2> */}
-            <strong>{Math.round(weather.currentTemperature)}°C</strong>
+        </div>
+        <div className="row conditions-icons-card">
+          {/* <div className="col-sm icon-temp-card"> */}
+            <div className="col-sm icon-card">
+              <img src={weather.icon} alt={weather.description} />
+            </div>
+            <div className="col-sm temp-card">
+              <strong>{Math.round(weather.currentTemperature)} <span className="temp-unit">°C</span></strong>
+              {/* <p className="description">{weather.description}</p> */}
+            {/* </div> */}
           </div>
-          <div className="col-3 icon-card">
-            <img src={weather.icon} alt={weather.description} />
-          </div>
-          <div className="col-4 conditions-card">
+          <div className="col-sm conditions-card">
             <ul>
               <li className="description">{weather.description}</li>
               <li>Wind: {Math.round(weather.windSpeed)}km/hr</li>
@@ -77,6 +80,8 @@ export default function WeatherSummary(props) {
             </ul>
           </div>
         </div>
+        <hr />
+        <Forecast />
       </div>
     );
   } else {

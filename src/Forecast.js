@@ -4,8 +4,8 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Forecast() {
   return (
-    <div className="forecast-container">
-      <div className="five-cols">
+    <div className="row forecast-container">
+      <div className="col-sm">
         <h3>Wed</h3>
         <ReactAnimatedWeather
           icon={"CLOUDY"}
@@ -15,7 +15,7 @@ export default function Forecast() {
         />
         <p>21°C</p>
       </div>
-      <div className="five-cols">
+      <div className="col-sm">
         <h3>Thurs</h3>
         <ReactAnimatedWeather
           icon={"SNOW"}
@@ -25,7 +25,7 @@ export default function Forecast() {
         />
         <p>29°C</p>
       </div>
-      <div className="five-cols">
+      <div className="col-sm">
         <h3>Fri</h3>
         <ReactAnimatedWeather
           icon={"SLEET"}
@@ -35,7 +35,7 @@ export default function Forecast() {
         />
         <p>23°C</p>
       </div>
-      <div className="five-cols">
+      <div className="col-sm">
         <h3>Sat</h3>
         <ReactAnimatedWeather
           icon={"FOG"}
@@ -45,7 +45,7 @@ export default function Forecast() {
         />
         <p>12°C</p>
       </div>
-      <div className="five-cols">
+      <div className="col-sm">
         <h3>Sun</h3>
         <ReactAnimatedWeather
           icon={"RAIN"}
