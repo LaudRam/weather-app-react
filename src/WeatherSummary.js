@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSummary.css";
-// import Forecast from "./Forecast";
 import CurrentWeather from "./CurrentWeather";
 import { Bars } from "react-loader-spinner";
 import ForecastSummary from "./ForecastSummary";
@@ -59,7 +58,6 @@ export default function WeatherSummary(props) {
           <CurrentWeather data={weather} />
         </div>
         <div className="row conditions-icons-card">
-          {/* <div className="col-sm icon-temp-card"> */}
           <div className="col-sm icon-card">
             <img src={weather.icon} alt={weather.description} />
           </div>
@@ -68,8 +66,6 @@ export default function WeatherSummary(props) {
               {Math.round(weather.currentTemperature)}
               <span className="temp-unit">°C</span>
             </strong>
-            {/* <p className="description">{weather.description}</p> */}
-            {/* </div> */}
           </div>
           <div className="col-sm conditions-card">
             <ul>
@@ -80,7 +76,6 @@ export default function WeatherSummary(props) {
           </div>
         </div>
         <hr />
-        {/* <Forecast /> */}
         <ForecastSummary coordinates={weather.coordinates} city={weather.city}/>
       </div>
     );
@@ -91,7 +86,7 @@ export default function WeatherSummary(props) {
         <Bars
           height="80"
           width="80"
-          color="#4fa94d"
+          color="#5F5F8B"
           ariaLabel="bars-loading"
           wrapperStyle={{}}
           wrapperClass=""

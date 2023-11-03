@@ -9,8 +9,6 @@ function App() {
     <div className="App">
       <div className="weather-container">
         <WeatherSummary defaultCity="Bushbuckridge" />
-        {/* <hr /> */}
-        {/* <Forecast /> */}
       </div>
       <Footer />
     </div>
