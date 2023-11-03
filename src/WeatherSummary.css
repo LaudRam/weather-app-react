@@ -1,17 +1,10 @@
 .weather-summary {
-  /* display: flex; */
-  /* align-items: center; */
   text-align: left;
 }
 .conditions-icons-card {
-  /* display: flex; */
   align-items: center;
-  /* flex-direction: column; */
 }
 .icon-temp-card {
-  /* display: flex; */
-  /* align-items: center; */
-  /* flex-direction: column; */
   padding: 0;
 }
 .icon-card {
@@ -23,12 +16,12 @@
   padding: 0;
 }
 .temp-unit {
-  display: inline;
+  /* display: inline; */
   vertical-align: super;
   font-size: 40%;
   font-weight: 300;
-  position: relative;
-  left: -20px;
+  /* position: relative; */
+  /* left: -20px; */
 }
 .conditions-card {
   text-align: right;
@@ -50,7 +43,7 @@ h2 {
 }
 strong {
   font-size: 80px;
-  opacity: .7;
+  /* opacity: .7; */
   margin: 0;
 }
 p {
@@ -71,6 +64,10 @@ img {
   vertical-align: middle;
   width: 150px;
 }
+hr {
+  margin-bottom: 30px;
+  border-top: #000 solid 2px;
+}
 
 /* Search Engine Styling */
 .SearchEngine {
@@ -82,17 +79,24 @@ form {
 }
 input {
   width: 70%;
+  border: none;
 }
 button {
   width: 30%;
+  background-color: #5F5F8B;
+  color: #fff;
+  border: none;
 }
 button,
 input {
   padding: 10px 15px;
   border-radius: 10px;
   font-size: 18px;
-  border: solid blue 3px;
 }
 button:hover {
   cursor: pointer;
+  background-color: #7a7ab1;
+}
+input:focus {
+  outline: #5F5F8B solid 3px;
 }

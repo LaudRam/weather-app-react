@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherSummary.css";
-import Forecast from "./Forecast";
+// import Forecast from "./Forecast";
 import CurrentWeather from "./CurrentWeather";
 import { Bars } from "react-loader-spinner";
+import ForecastSummary from "./ForecastSummary";
 
 export default function WeatherSummary(props) {
   let [weather, setWeather] = useState({});
@@ -11,8 +12,6 @@ export default function WeatherSummary(props) {
   let [loading, setLoading] = useState(false);
 
   function displayWeather(response) {
-    // console.log(response.data);
-
     setLoading(true);
     setWeather({
       currentTemperature: response.data.temperature.current,
@@ -20,6 +19,7 @@ export default function WeatherSummary(props) {
       humidity: response.data.temperature.humidity,
       windSpeed: response.data.wind.speed * 3.6,
       icon: response.data.condition.icon_url,
+      coordinates: response.data.coordinates,
       city: response.data.city,
     });
   }
@@ -56,11 +56,7 @@ export default function WeatherSummary(props) {
       <div className="weather-summary">
         {searchForm}
         <div className="city-card mt-4">
-          {/* <h1>{weather.city}</h1> */}
           <CurrentWeather data={weather} />
-          {/* <h2>
-              <FormattedDate date={weather.date}/>
-            </h2> */}
         </div>
         <div className="row conditions-icons-card">
           {/* <div className="col-sm icon-temp-card"> */}
@@ -69,7 +65,7 @@ export default function WeatherSummary(props) {
           </div>
           <div className="col-sm temp-card">
             <strong>
-              {Math.round(weather.currentTemperature)}{" "}
+              {Math.round(weather.currentTemperature)}
               <span className="temp-unit">°C</span>
             </strong>
             {/* <p className="description">{weather.description}</p> */}
@@ -84,7 +80,8 @@ export default function WeatherSummary(props) {
           </div>
         </div>
         <hr />
-        <Forecast />
+        {/* <Forecast /> */}
+        <ForecastSummary coordinates={weather.coordinates} city={weather.city}/>
       </div>
     );
   } else {
@@ -102,8 +99,5 @@ export default function WeatherSummary(props) {
         />
       </div>
     );
-    // return searchForm;
-    // return handleSubmit;
-    // return props.city;
   }
 }

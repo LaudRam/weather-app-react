@@ -1,59 +1,41 @@
 import React from "react";
 import "./Forecast.css";
-import ReactAnimatedWeather from "react-animated-weather";
 
-export default function Forecast() {
+export default function ForecastPrev(props) {
+  function day() {
+    let date = new Date(props.data.time * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    return days[day];
+  }
+
+  function maxTemperature() {
+    let temperature = Math.round(props.data.temperature.maximum);
+
+    return `${temperature}° `;
+  }
+
+  function minTemperature() {
+    let temperature = Math.round(props.data.temperature.minimum);
+
+    return `${temperature}°`;
+  }
+  console.log(props.data.condition.description);
+
+  function icon() {
+    let icon = props.data.condition.icon_url;
+    let iconDescription = props.data.condition.description;
+
+    return <img src={icon} alt={iconDescription} className="forecastIcon" />;
+  }
+
   return (
-    <div className="row forecast-container">
-      <div className="col-sm">
-        <h3>Wed</h3>
-        <ReactAnimatedWeather
-          icon={"CLOUDY"}
-          color={"red"}
-          size={64}
-          animate={true}
-        />
-        <p>21°C</p>
-      </div>
-      <div className="col-sm">
-        <h3>Thurs</h3>
-        <ReactAnimatedWeather
-          icon={"SNOW"}
-          color={"red"}
-          size={64}
-          animate={true}
-        />
-        <p>29°C</p>
-      </div>
-      <div className="col-sm">
-        <h3>Fri</h3>
-        <ReactAnimatedWeather
-          icon={"SLEET"}
-          color={"red"}
-          size={64}
-          animate={true}
-        />
-        <p>23°C</p>
-      </div>
-      <div className="col-sm">
-        <h3>Sat</h3>
-        <ReactAnimatedWeather
-          icon={"FOG"}
-          color={"red"}
-          size={64}
-          animate={true}
-        />
-        <p>12°C</p>
-      </div>
-      <div className="col-sm">
-        <h3>Sun</h3>
-        <ReactAnimatedWeather
-          icon={"RAIN"}
-          color={"red"}
-          size={64}
-          animate={true}
-        />
-        <p>19°C</p>
+    <div className="ForecastPrev">
+      <h3 className="forecast-time">{day()}</h3>
+      {icon()}
+      <div className="forecast-temperatures">
+        <span className="forecast-temperature-max">{maxTemperature()}</span>
+        <span className="forecast-temperature-min">{minTemperature()}</span>
       </div>
     </div>
   );
